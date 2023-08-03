@@ -1,0 +1,78 @@
+########### $$ REGISTER $$
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name":"Srinivas Akella",
+  "email":"srinivas@yopmail.com",
+  "password":"Srinivas@8",
+  "image":"https://res.cloudinary.com/dakda5ni3/image/upload/v1690879199/qlcjkwclj3vz6qmvnjhm.jpg",
+  "about":"A MERN stack developer",
+  "isAdmin":false,
+  "dob":"23-04-1997"
+}
+
+###############  $$ LOGIN $$
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email":"srinivas72075@gmail.com",
+  "password":"Srinivas@8"
+}
+
+############# $$ POST JOB $$
+POST http://localhost:5000/api/jobs/createJob
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlzQWRtaW4iOjAsImlhdCI6MTY5MTA3MjkzMX0.Qqka-9RtTALZrfaneVNmcb5ejB1zvnsueKnQdi9_esg
+Content-Type: application/json
+
+{
+    "company_logo": "https://seeklogo.com/images/I/infosys-limited-logo-7E1357B554-seeklogo.com.png",
+    "company_name": "Infosys PVT LTD",
+    "job_role": "Software developer - 2",
+    "job_type": "Full-Time",
+    "location": "WFH",
+    "skills": "ReactJs, NodeJs, SQLite, Postgres, ExpressJs, MongoDB, Angular",
+    "salary": "2,00,000/month",
+    "responsibilities": "Developing web pages, Integrating Api's, Developing Api's",
+    "experience": "2 years & above",
+    "about_job": "You will need to have an excellent understanding of the javaScript frameworks like ReactJs, Angular, NodeJs, and should be very fluent with javaScript.",
+    "about_company": "You will not be liable to work even you are home, we provide flexible leaves, flexible salaries",
+    "user_id": 2
+}
+
+########### $$ READ JOBS $$
+GET http://localhost:5000/api/jobs/readJobs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOjEsImlhdCI6MTY5MTA3MTExMX0.HYiMJfeqgmWCU3VPpT0UyAWFHae35is342WD7wZiPUM
+
+
+############ $$ READ JOBS BY EMPLOYER ID $$
+GET http://localhost:5000/api/jobs/readByEmployerId/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlzQWRtaW4iOjAsImlhdCI6MTY5MTA3MjkzMX0.Qqka-9RtTALZrfaneVNmcb5ejB1zvnsueKnQdi9_esg
+
+########## $$ UPDATE THE JOB $$
+PATCH http://localhost:5000/api/jobs/updateJob/1/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlzQWRtaW4iOjAsImlhdCI6MTY5MTA3MjkzMX0.Qqka-9RtTALZrfaneVNmcb5ejB1zvnsueKnQdi9_esg
+
+{
+    "company_logo": "https://seeklogo.com/images/I/infosys-limited-logo-7E1357B554-seeklogo.com.png",
+    "company_name": "Infosys PVT LTD",
+    "job_role": "Software developer - 3",
+    "job_type": "Full-Time",
+    "location": "WFO",
+    "skills": "ReactJs, NodeJs, SQLite, Postgres, ExpressJs, MongoDB, Angular",
+    "salary": "2,00,000/month",
+    "responsibilities": "Developing web pages, Integrating Api's, Developing Api's",
+    "experience": "2 years & above",
+    "about_job": "You will need to have an excellent understanding of the javaScript frameworks like ReactJs, Angular, NodeJs, and should be very fluent with javaScript.",
+    "about_company": "You will not be liable to work even you are home, we provide flexible leaves, flexible salaries"
+}
+
+############## $$ DELETE A JOB $$
+DELETE http://localhost:5000/api/jobs/deleteJob/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOjEsImlhdCI6MTY5MTA3NzQ1NH0.8pQhEB2KCoTHv_UyTrpWjuLqI0EWTBGk5l_5t11438M
+Content-Type: application/json
+

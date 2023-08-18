@@ -64,8 +64,22 @@ export const readByEmployerId = (req, res) => {
     } else if (result) {
       res.status(200).json({
         message: "Fetched your posted jobs successfully",
-        job: result,
+        jobs: result,
       });
+    }
+  });
+};
+
+export const readJobById = (req, res) => {
+  const { jobId } = req.params;
+  const sql = "SELECT * FROM jobs WHERE id = ?";
+  db.query(sql, [jobId], (err, result) => {
+    if (err) {
+      return res.status(400).json({ message: "Internal error" });
+    } else if (result) {
+      res
+        .status(200)
+        .json({ message: "Fetched the job successfully", job: result[0] });
     }
   });
 };
@@ -116,6 +130,7 @@ export const deleteJob = (req, res) => {
   const sql = "DELETE FROM jobs WHERE id = ?";
   db.query(sql, [jobId], (err, result) => {
     if (err) {
+      console.log(err);
       return res.status(403).json({ message: "Some Internal error" });
     } else if (result.affectedRows > 0) {
       res.status(200).json({ message: "Deleted the job successfully" });

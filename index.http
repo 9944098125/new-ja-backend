@@ -23,7 +23,7 @@ Content-Type: application/json
 
 ############# $$ POST JOB $$
 POST http://localhost:5000/api/jobs/createJob
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlzQWRtaW4iOjAsImlhdCI6MTY5MTA3MjkzMX0.Qqka-9RtTALZrfaneVNmcb5ejB1zvnsueKnQdi9_esg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOjEsImlhdCI6MTY5MTU1NjYzOX0.4d2B6Uphkl27Vcw7MYACs8poE_sk4Zo56lNxoH8vLqI
 Content-Type: application/json
 
 {
@@ -38,7 +38,7 @@ Content-Type: application/json
     "experience": "2 years & above",
     "about_job": "You will need to have an excellent understanding of the javaScript frameworks like ReactJs, Angular, NodeJs, and should be very fluent with javaScript.",
     "about_company": "You will not be liable to work even you are home, we provide flexible leaves, flexible salaries",
-    "user_id": 2
+    "user_id": 1
 }
 
 ########### $$ READ JOBS $$
@@ -46,11 +46,15 @@ GET http://localhost:5000/api/jobs/readJobs
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOjEsImlhdCI6MTY5MTA3MTExMX0.HYiMJfeqgmWCU3VPpT0UyAWFHae35is342WD7wZiPUM
 
+####### $$ GET JOB BY ID $$
+GET http://localhost:5000/api/jobs/readJobById/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOjEsImlhdCI6MTY5MTY1NjQ4Mn0.FkixfnvcmM7FadQFCjO3kPRw2seGlzfpvkUuOgfVmsM
 
 ############ $$ READ JOBS BY EMPLOYER ID $$
 GET http://localhost:5000/api/jobs/readByEmployerId/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlzQWRtaW4iOjAsImlhdCI6MTY5MTA3MjkzMX0.Qqka-9RtTALZrfaneVNmcb5ejB1zvnsueKnQdi9_esg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOjEsImlhdCI6MTY5MTc1NTk0Mn0.sVb4E0ntQQmDp6UJ5KcBg9A657kQrGv4vNsA1AG1O7Y
 
 ########## $$ UPDATE THE JOB $$
 PATCH http://localhost:5000/api/jobs/updateJob/1/2
@@ -75,4 +79,3 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlzQ
 DELETE http://localhost:5000/api/jobs/deleteJob/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlzQWRtaW4iOjEsImlhdCI6MTY5MTA3NzQ1NH0.8pQhEB2KCoTHv_UyTrpWjuLqI0EWTBGk5l_5t11438M
 Content-Type: application/json
-

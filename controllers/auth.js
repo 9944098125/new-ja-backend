@@ -6,7 +6,7 @@ import { sendRegistrationEmail } from "../helpers/nodemailer.js";
 export const register = (req, res) => {
   // taking the details request body
   const { name, email, password, image, about, isAdmin, dob } = req.body;
-  if (!(name && email && password && image && about && isAdmin && dob)) {
+  if (!(name && email && password && image && about && dob)) {
     return res.status(400).json({ message: "Please Fill all the fields..." });
   }
   const sql = "SELECT * FROM users WHERE email = ?";

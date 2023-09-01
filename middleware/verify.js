@@ -48,7 +48,7 @@ export const verifyJobOwner = (req, res, next) => {
     db.query(sql, [jobId], (err, result) => {
       if (err) {
         return res.status(404).json({ message: "Some internal error" });
-      } else if (result.length >= 0) {
+      } else if (result.length > 0) {
         console.log(result[0].user_id);
         const ownerId = result[0].user_id;
         req.user = decoded;
